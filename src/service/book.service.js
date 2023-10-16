@@ -26,8 +26,10 @@ const getById = async (id) => {
 const deleteBook = async (id) => {
   const url = `${ENDPOINT}?id=${id}`;
   return request.delete(url).then((res) => {
-    console.log(res);
+    console.log("this is deleted response",res);
     return res;
+  }).catch((err)=>{
+    console.log("this is error for deleting book",err);
   });
 };
 
